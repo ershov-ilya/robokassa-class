@@ -50,7 +50,7 @@ class Robokassa{
             if(empty($crc_data['InvId'])) return '';
             $str = implode(':', $crc_data);
             $str = $str . ':' . $pass2;
-            $this->crc_sum2 = md5($str);
+            $this->crc_sum2 = strtoupper(md5($str));
         }
         return $this->crc_sum2;
     }
