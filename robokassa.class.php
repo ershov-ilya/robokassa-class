@@ -17,7 +17,7 @@ class Robokassa{
 
     private $crc_sum2;
 
-    public function __construct($data, $config=array())
+    public function __construct($data, $config=array(), $testmode=false)
     {
         if(empty($config)) die('Lost Robokassa config!');
         $this->data = $data;
