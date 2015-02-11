@@ -22,7 +22,9 @@ class Robokassa{
         if(empty($config)) die('Lost Robokassa config!');
         $this->data = $data;
         $this->config=$config;
-        $this->baseURL = 'http://test.robokassa.ru/Index.aspx?';
+        if($testmode) $this->baseURL = 'http://test.robokassa.ru/Index.aspx?';
+        else $this->baseURL = 'https://merchant.roboxchange.com/Index.aspx?';
+
     }
 
     private function genCRC1(){
